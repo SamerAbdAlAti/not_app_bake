@@ -2,7 +2,7 @@
 include "connect.php";
 
 
-$stmt = $connect->prepare("SELECT * FROM `users`");
+$stmt = $connect->prepare("SELECT * FROM `users` WHERE  email='samer@gmail.com'");
 
 $stmt->execute();
 $datsa=$stmt->fetchAll(PDO::FETCH_ASSOC);

@@ -1,9 +1,72 @@
 <?php
 
+
+function langSuccess($lang = "en", $username, $email)
+{
+    if ($lang == "en") {
+        return array(
+            array(
+                "state" => "success",
+                "message" => "SignUp Success",
+                "add_user" => "$username",
+                "add_email" => "$email",
+                "set_password" => "success",
+            )
+        );
+    } else if ($lang = "ar") ;
+    {
+
+        return array(
+            array(
+                "الحالة" => "العملية ناجحة",
+                "message" => "تم التسجيل بنجاح",
+                "add_user" => "$username",
+                "add_email" => "$email",
+                "set_password" => "العملية ناجحة",
+            )
+        );
+    }
+}
+
+function langFail($langF = "en")
+{
+    if ($langF = "en") {
+        return array(
+            array(
+                "state" => "Fail",
+                "message" => "Fail SignUp",
+                "add_user" => null,
+                "add_email" => null,
+                "set_password" => "success",
+            )
+        );
+    } else if ($lang = "ar") ;
+    {
+
+        return array(
+            array(
+                "الحالة" => "العملية غير ناجحة",
+                "message" => "فشل التسجيل",
+                "add_user" => null,
+                "add_email" => null,
+                "set_password" => "العملية غير ناجحة",
+            )
+        );
+    }
+}
+
+
 function postData($postName)
 {
 
     return htmlspecialchars(strip_tags($_POST[utf8_encode($postName)]));
+}
+
+
+function getData($getName)
+{
+
+    return htmlspecialchars(strip_tags($_GET[utf8_encode($getName)]));
 }
 
 function cors()
